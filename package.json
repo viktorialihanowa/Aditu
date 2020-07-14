@@ -1,0 +1,29 @@
+{
+    "name": "aditu",
+    "version": "1.0.0",
+    "description": "",
+    "main": "index.js",
+    "dependencies": {},
+    "devDependencies": {
+        "browser-sync": "^2.26.7",
+        "gulp": "^4.0.2",
+        "gulp-autoprefixer": "^7.0.1",
+        "gulp-cli": "^2.3.0",
+        "gulp-less": "^4.0.1",
+        "gulp-live-server": "0.0.31",
+        "gulp-plumber": "^1.2.1",
+        "gulp-postcss": "^8.0.0",
+        "gulp-posthtml": "^3.0.5",
+        "mincss": "^0.4.1"
+    },
+    "browserslist": [
+        "last 25 version",
+        "> 1%",
+        "IE 10"
+    ],
+    "scripts": {
+        "test": "echo \"Error: no test specified\" && exit 1"
+    },
+    "author": "",
+    "license": "ISC"
+}
