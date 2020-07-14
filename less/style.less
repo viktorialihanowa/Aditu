@@ -137,10 +137,12 @@ body{
         left: 0;
         right: 0;
         margin: 0 auto;
+        z-index: 10;
     }
     &__item.show{
         opacity: 1;
         transition: opacity 2s;
+        z-index: 100;
     }
     &__image{
         margin-right: 99px;
@@ -198,6 +200,7 @@ body{
     display: flex;
     justify-content: center;
     list-style: none;
+
     &__item{
         width: 9px;
         height: 9px;
