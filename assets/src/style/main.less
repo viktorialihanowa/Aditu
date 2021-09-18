@@ -42,7 +42,7 @@ body{
     min-width: 1024px;
     &__logo{
         font-family: 'Lobster', cursive;
-        color: #3cc3b5;
+        color: #0a6f65;
         font-size: 49px;
     }
     .container{
@@ -88,7 +88,7 @@ body{
 }
 .page-nav{
     width: 100%;
-    background-color: #3cc3b5;
+    background-color: #0a6f65;
     margin-top: 20px;
     padding: 8px 0;
     box-shadow: 0px 2px 3px 0px #40404059;
@@ -120,6 +120,7 @@ body{
     height: 424px;
     width: 100%;
     min-width: 1024px;
+    background-color: #0a6f658f;
 
     &__list{
         list-style: none;
@@ -300,7 +301,7 @@ body{
     &__button{
         height: 35px;
         width: 74px;
-        background-color: #3cc395;
+        background-color: #0a6f65;
         border: none;
         border-radius: 3px;
         color: #ffffff;
@@ -309,6 +310,8 @@ body{
         line-height: 20px;
         font-family: 'Bebas Neue', cursive;
         cursor: pointer;
+        line-height: 34px;
+    text-align: center;
     }
     &__button:hover,&__button:focus{
         background-color: #0d8059;
@@ -317,13 +320,15 @@ body{
 }
 
 .products{
+
     width: 100%;
     &__header{
         display: block;
         width: 100%;
+        background-color: #0a6f658f;
         .container{
             padding: 10px 0;
-            padding-left: 40px;
+            padding-left: 0px;
         }
     }
     &__wrapper{
@@ -339,7 +344,7 @@ body{
         width: 257px;
         box-shadow:  0 0 0 1px #e4e4e4,0 0 0 2px #f6f6f6;
         padding: 44px 19px 30px;
-        border-bottom: 5px solid #3cc395;
+        border-bottom: 5px solid #0a6f65;
         color: #afafaf;
         text-align: center;
         font-size: 27px;
@@ -375,7 +380,7 @@ body{
     &__button{
         height: 35px;
         width: 74px;
-        background-color: #3cc395;
+        background-color: #0a6f65;
         border: none;
         border-radius: 3px;
         color: #ffffff;
@@ -384,6 +389,7 @@ body{
         line-height: 20px;
         font-family: 'Bebas Neue', cursive;
         cursor: pointer;
+        line-height: 34px;
     }
     &__button:hover,&__button:focus{
         background-color: #0d8059;
@@ -393,8 +399,8 @@ body{
 
 .main-footer{
     width: 100%;
-    border-bottom: 46px solid #2da89b;
-    // background-color: #3cc3b5;
+    border-bottom: 46px solid #0a6f65;
+    background-color: #0a6f658f;
     padding: 41px 0px;
     min-width: 1024px;
 }
@@ -469,3 +475,6 @@ body{
     opacity: 1;
     z-index: 2;
 }
+@import "item-card.less";
+@import "raiting.less";
+@import "Sign.less";

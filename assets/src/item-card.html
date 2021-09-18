@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="ru">
+
+<head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="css/main.min.css.map">
+    <link rel="stylesheet" href="css/main.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Lobster&family=Open+Sans&display=swap" rel="stylesheet">
+    <title>ADITU</title>
+</head>
+
+<body>
+    @@include('header.html')
+    <main class="">
+        <div class="item-card__cont">
+            <div class="container ">
+                <section class="item-card">
+
+                    <div class="item-card__left">
+                        <div class="item-card__image">
+                            <img src="img/item3.png" width="450" alt="" class="products__image">
+
+                        </div>
+
+                        <div class="item-card__rate rating-result">
+                            <span class="active"></span>
+                            <span class="active"></span>
+                            <span class="active"></span>
+                            <span></span>
+                            <span></span>
+                        </div>
+
+
+
+                    </div>
+
+                    <div class="item-card__description">
+
+                        <h1 class="item-card__name">bRANDED tSHIRTS
+                            <sup class="item-card__brand">Ostin</sup>
+                        </h1>
+
+                        <div class="item-card__price">800 RUB</div>
+                        <div class="item-card__describing">
+                            T-shirts are made of a special material - a fabric of interwoven cotton and polyester threads. Cotton allows the fabric to breathe, it is pleasant to lie on the skin and does not stretch, and polyester reliably fixes the printed image in the fibers of
+                            the fabric, making it bright and durable over time. In this way, the T-shirts remain lightweight yet take on the image well.
+                        </div>
+
+
+
+                        <button class="item-card__button ">Add to Basket</button>
+                    </div>
+
+
+
+
+
+                </section>
+
+
+            </div>
+        </div>
+
+        <div class="products__header">
+            <div class="container">
+                <h2>reviews</h2>
+            </div>
+        </div>
+        <div class="reviews__container">
+            <div class="container">
+
+                <section class="reviews" id="reviews">
+
+                    <div class="reviews__item review">
+                        <p class="review__name">Fedor Vasechkin</p>
+
+                        <div class="review__stars">4</div>
+                        <p class="review__text">Bought 100,500 times already. Everything is awesome</p>
+                        <time class="review__date" datetime="2015-11-18">November 18, 2015</time>
+
+
+                    </div>
+                    <div class="reviews__item review">
+                        <p class="review__name">Fedor Vasechkin</p>
+
+                        <div class="review__stars">5</div>
+                        <p class="review__text">
+                            I just got my T-shirt. I was afraid not to guess with the size. I have the top - 46, and the bottom - 48. I took S - it was perfect :) The color is much more interesting than in the picture - light jeans. In general, I am very pleased, I will order more.
+                            thanks
+                        </p>
+                        <time class="review__date" datetime="2015-11-18">November 18, 2015</time>
+
+
+                    </div>
+                </section>
+                <section class="your-review">
+                    <h2 class="your-review__header">Your review:</h2>
+                    <form class="your-review__form" action="">
+
+                        <div class="rating-area">
+                            <input type="radio" id="star-5" name="rating" value="5">
+                            <label for="star-5" title="Оценка «5»"></label>
+                            <input type="radio" id="star-4" name="rating" value="4">
+                            <label for="star-4" title="Оценка «4»"></label>
+                            <input type="radio" id="star-3" name="rating" value="3">
+                            <label for="star-3" title="Оценка «3»"></label>
+                            <input type="radio" id="star-2" name="rating" value="2">
+                            <label for="star-2" title="Оценка «2»"></label>
+                            <input type="radio" id="star-1" name="rating" value="1">
+                            <label for="star-1" title="Оценка «1»"></label>
+                        </div>
+                        <textarea class="your-review__text" name="" id="" cols="30" rows="10"></textarea>
+                        <button class="item-card__button ">Save</button>
+                    </form>
+                </section>
+            </div>
+        </div>
+
+    </main>
+    @@include('footer.html')
+</body>
+
+
+</html>

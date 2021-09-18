@@ -1,0 +1,841 @@
+* {
+  margin: 0;
+  padding: 0;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+}
+html {
+  min-width: 1024px;
+}
+.visually-hidden:not(:focus):not(:active),
+input[type=checkbox].visually-hidden,
+input[type=radio].visually-hidden {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  margin: -1px;
+  border: 0;
+  padding: 0;
+  white-space: nowrap;
+  -webkit-clip-path: inset(100%);
+  clip-path: inset(100%);
+  clip: rect(0 0 0 0);
+  overflow: hidden;
+}
+body {
+  color: #ffffff;
+  font-family: 'Bebas Neue', cursive;
+  background-color: #3cc3b5;
+  background-image: url("../img/bg_slider.png");
+  background-attachment: fixed;
+  min-width: 1024px;
+  overflow-x: hidden;
+}
+.container {
+  width: 1024px;
+  margin: 0 auto;
+}
+.header {
+  width: 100%;
+  padding-top: 21px;
+  background-color: #ffffff;
+  min-width: 1024px;
+}
+.header__logo {
+  font-family: 'Lobster', cursive;
+  color: #0a6f65;
+  font-size: 49px;
+}
+.header .container {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-justify-content: space-around;
+      -ms-flex-pack: distribute;
+          justify-content: space-around;
+  -webkit-box-align: center;
+  -webkit-align-items: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+.search {
+  width: 436px;
+  height: 33px;
+  padding: 0px 5px 0px 0;
+  border: 1px solid #e1e1e1;
+  position: relative;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+  -webkit-justify-content: space-between;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  -webkit-box-align: center;
+  -webkit-align-items: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+.search__input {
+  width: 100%;
+  height: 100%;
+  padding: 5px;
+  border: none;
+  outline: none;
+}
+.search::after {
+  content: "";
+  display: table;
+  background-image: url(../img/magnifier.svg);
+  width: 22px;
+  height: 22px;
+}
+.box {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+  -webkit-align-items: center;
+      -ms-flex-align: center;
+          align-items: center;
+  color: #a1a1a1;
+  font-size: 33px;
+  font-family: 'Bebas Neue', cursive;
+}
+.box img {
+  margin-right: 20px;
+}
+.page-nav {
+  width: 100%;
+  background-color: #0a6f65;
+  margin-top: 20px;
+  padding: 8px 0;
+  -webkit-box-shadow: 0px 2px 3px 0px #40404059;
+          box-shadow: 0px 2px 3px 0px #40404059;
+}
+.page-nav__list {
+  width: 100%;
+  list-style: none;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+  -webkit-align-items: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: justify;
+  -webkit-justify-content: space-between;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+}
+.page-nav__item {
+  -webkit-box-flex: 1;
+  -webkit-flex-grow: 1;
+      -ms-flex-positive: 1;
+          flex-grow: 1;
+  text-align: center;
+}
+.page-nav__item:not(:last-of-type) {
+  border-right: 1px solid #ffffff;
+}
+.page-nav__link {
+  color: #ffffff;
+  text-decoration: none;
+}
+.page-nav__link:hover {
+  color: #125049;
+}
+.actions {
+  position: relative;
+  height: 424px;
+  width: 100%;
+  min-width: 1024px;
+  background-color: #0a6f658f;
+}
+.actions__list {
+  list-style: none;
+  width: 100%;
+  position: relative;
+}
+.actions__item {
+  height: 424px;
+  padding: 60px 20px 30px;
+  opacity: 0;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  position: absolute;
+  width: 1024px;
+  left: 0;
+  right: 0;
+  margin: 0 auto;
+  z-index: 10;
+}
+.actions__item.show {
+  opacity: 1;
+  -webkit-transition: opacity 2s;
+  -o-transition: opacity 2s;
+  transition: opacity 2s;
+  z-index: 100;
+}
+.actions__image {
+  margin-right: 99px;
+  margin-left: 46px;
+}
+.actions__text {
+  width: 405px;
+}
+.actions__name {
+  font-size: 61px;
+  font-family: 'Bebas Neue', cursive;
+  line-height: 61px;
+  padding-right: 45px;
+}
+.actions__description {
+  font-family: 'Open Sans', sans-serif;
+  font-size: 17px;
+  line-height: 28px;
+  text-transform: none;
+  margin-bottom: 20px;
+}
+.actions__button {
+  padding: 10px 25px;
+  border: 3px solid #ffffff;
+  color: #ffffff;
+  background-color: transparent;
+  -webkit-border-radius: 5px;
+          border-radius: 5px;
+  text-transform: uppercase;
+  cursor: pointer;
+  outline: none;
+}
+.actions__button:hover,
+.actions__button:focus {
+  color: #3cc3b5;
+  background-color: #ffffff;
+}
+.actions__button:active {
+  color: #3cc3b5;
+  background-color: #dddcdc;
+  border: 3px solid #dddcdc;
+}
+.actions__dots {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  margin: 0 auto;
+  margin-bottom: 34px;
+}
+.dots {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+  -webkit-justify-content: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  list-style: none;
+}
+.dots__item {
+  width: 9px;
+  height: 9px;
+  background-color: #ffffff;
+  margin: 0 10px;
+  -webkit-border-radius: 50%;
+          border-radius: 50%;
+  cursor: pointer;
+}
+.dots__item.active {
+  opacity: 0.3;
+}
+.dots__item:focus {
+  outline: none;
+}
+.popular {
+  width: 100%;
+  background-color: #ffffff;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  position: relative;
+  overflow: hidden;
+  min-width: 1024px;
+}
+.popular-btn {
+  -webkit-box-flex: 1;
+  -webkit-flex-grow: 1;
+      -ms-flex-positive: 1;
+          flex-grow: 1;
+  background-color: #ffffff;
+  background-repeat: no-repeat;
+  outline: none;
+  border: none;
+  cursor: pointer;
+}
+.popular__wrapper {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-transition: -webkit-transform 0.6s ease;
+  transition: -webkit-transform 0.6s ease;
+  -o-transition: transform 0.6s ease;
+  transition: transform 0.6s ease;
+  transition: transform 0.6s ease, -webkit-transform 0.6s ease;
+}
+.popular .popular-btn:hover,
+.popular .popular-btn:focus {
+  background-color: rgba(0, 0, 0, 0.05);
+}
+.popular .popular__prew {
+  background-image: url(../img/btn-left.png);
+  background-position: center left;
+}
+.popular .popular__next {
+  background-image: url(../img/btn-right.png);
+  background-position: center right;
+}
+.popular .container {
+  overflow: hidden;
+  -webkit-transition: -webkit-transform 0.6s ease;
+  transition: -webkit-transform 0.6s ease;
+  -o-transition: transform 0.6s ease;
+  transition: transform 0.6s ease;
+  transition: transform 0.6s ease, -webkit-transform 0.6s ease;
+}
+.popular__item {
+  -webkit-box-flex: 1;
+  -webkit-flex-grow: 1;
+      -ms-flex-positive: 1;
+          flex-grow: 1;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  padding: 25px;
+  font-size: 27px;
+  color: #afafaf;
+  border-right: 1px solid #e7e7e7;
+  -webkit-box-flex: 0;
+  -webkit-flex-grow: 0;
+      -ms-flex-positive: 0;
+          flex-grow: 0;
+  -webkit-flex-shrink: 0;
+      -ms-flex-negative: 0;
+          flex-shrink: 0;
+  -webkit-flex-basis: 33.3333%;
+      -ms-flex-preferred-size: 33.3333%;
+          flex-basis: 33.3333%;
+  max-width: 33.333333%;
+  min-width: 341px;
+}
+.popular__item:nth-child(3n+3) {
+  border-right: none;
+}
+.popular__image-wrapper {
+  height: 100%;
+  width: 171px;
+  overflow: hidden;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+  -webkit-align-items: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+  -webkit-justify-content: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-flex-shrink: 0;
+      -ms-flex-negative: 0;
+          flex-shrink: 0;
+}
+.popular__image {
+  display: block;
+  margin: 0 auto;
+}
+.popular__text-wrapper {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+  -webkit-flex-direction: column;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: justify;
+  -webkit-justify-content: space-between;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+}
+.popular__name {
+  font-size: 27px;
+}
+.popular__button {
+  height: 35px;
+  width: 74px;
+  background-color: #0a6f65;
+  border: none;
+  -webkit-border-radius: 3px;
+          border-radius: 3px;
+  color: #ffffff;
+  text-transform: uppercase;
+  font-size: 20px;
+  line-height: 20px;
+  font-family: 'Bebas Neue', cursive;
+  cursor: pointer;
+  line-height: 34px;
+  text-align: center;
+}
+.popular__button:hover,
+.popular__button:focus {
+  background-color: #0d8059;
+  outline: none;
+}
+.products {
+  width: 100%;
+}
+.products__header {
+  display: block;
+  width: 100%;
+  background-color: #0a6f658f;
+}
+.products__header .container {
+  padding: 10px 0;
+  padding-left: 0px;
+}
+.products__wrapper {
+  background-color: #ffffff;
+}
+.products__wrapper .container {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-flex-wrap: wrap;
+      -ms-flex-wrap: wrap;
+          flex-wrap: wrap;
+  padding: 0 36px;
+}
+.products__item {
+  margin: 47px 30px;
+  width: 257px;
+  -webkit-box-shadow: 0 0 0 1px #e4e4e4, 0 0 0 2px #f6f6f6;
+          box-shadow: 0 0 0 1px #e4e4e4, 0 0 0 2px #f6f6f6;
+  padding: 44px 19px 30px;
+  border-bottom: 5px solid #0a6f65;
+  color: #afafaf;
+  text-align: center;
+  font-size: 27px;
+}
+.products__image-wrapper {
+  height: 131px;
+  width: 100;
+  overflow: hidden;
+}
+.products__image {
+  margin: 0 auto;
+  display: block;
+}
+.products__name {
+  width: 100%;
+  text-align: center;
+  display: block;
+  font-size: 27px;
+}
+.products__text-wrapper {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+  -webkit-align-items: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+  -webkit-justify-content: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  margin-top: 15px;
+}
+.products__cost {
+  display: inline-block;
+  margin-right: 15px;
+  line-height: 35px;
+}
+.products__button {
+  height: 35px;
+  width: 74px;
+  background-color: #0a6f65;
+  border: none;
+  -webkit-border-radius: 3px;
+          border-radius: 3px;
+  color: #ffffff;
+  text-transform: uppercase;
+  font-size: 20px;
+  line-height: 20px;
+  font-family: 'Bebas Neue', cursive;
+  cursor: pointer;
+  line-height: 34px;
+}
+.products__button:hover,
+.products__button:focus {
+  background-color: #0d8059;
+  outline: none;
+}
+.main-footer {
+  width: 100%;
+  border-bottom: 46px solid #0a6f65;
+  background-color: #0a6f658f;
+  padding: 41px 0px;
+  min-width: 1024px;
+}
+.categoryes {
+  list-style: none;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  width: 100%;
+  -webkit-box-pack: justify;
+  -webkit-justify-content: space-between;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+}
+.categoryes__item {
+  line-height: 27px;
+  font-size: 27px;
+  font-family: 'Bebas Neue', cursive;
+  width: 124px;
+  display: block;
+  -webkit-flex-shrink: 0;
+      -ms-flex-negative: 0;
+          flex-shrink: 0;
+  -webkit-box-flex: 1;
+  -webkit-flex-grow: 1;
+      -ms-flex-positive: 1;
+          flex-grow: 1;
+  padding: 5px 15px;
+}
+.categoryes__header {
+  line-height: 27px;
+  font-size: 27px;
+  font-family: 'Bebas Neue', cursive;
+}
+.brands {
+  list-style: none;
+  margin-top: 20px;
+}
+.brands__item {
+  font-family: 'Open Sans', sans-serif;
+  font-size: 15px;
+  line-height: 28px;
+}
+.brands__link {
+  text-transform: none;
+  color: #ffffff;
+  text-decoration: none;
+  font-family: 'Open Sans', sans-serif;
+  font-size: 15px;
+  line-height: 28px;
+  display: block;
+}
+.brands__link:hover {
+  color: #125049;
+}
+#slides {
+  position: relative;
+  height: 300px;
+  padding: 0px;
+  margin: 0px;
+  list-style-type: none;
+}
+.slide {
+  position: absolute;
+  left: 0px;
+  top: 0px;
+  width: 100%;
+  height: 100%;
+  opacity: 0;
+  z-index: 1;
+  -webkit-transition: opacity 1s;
+  -o-transition: opacity 1s;
+  transition: opacity 1s;
+}
+.showing {
+  opacity: 1;
+  z-index: 2;
+}
+.item-card {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  padding: 50px 0;
+  color: #000000;
+  font-family: 'Bebas Neue', cursive;
+}
+.item-card__cont {
+  background-color: #ffffff;
+}
+.item-card__image {
+  width: 500px;
+  height: 700px;
+  -webkit-box-shadow: 0 0 0 1px #e4e4e4, 0 0 0 2px #f6f6f6;
+          box-shadow: 0 0 0 1px #e4e4e4, 0 0 0 2px #f6f6f6;
+  padding: 44px 19px 30px;
+  border-bottom: 5px solid #0d8059;
+  margin: 0px 20px 10px 0 ;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+  -webkit-align-items: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+  -webkit-justify-content: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+}
+.item-card__image img {
+  max-width: 400px;
+  max-height: 600px;
+}
+.item-card__button {
+  height: 50px;
+  background-color: #0a6f65;
+  border: none;
+  -webkit-border-radius: 3px;
+  border-radius: 3px;
+  color: #fff;
+  text-transform: uppercase;
+  font-size: 30px;
+  line-height: 30px;
+  font-family: 'Bebas Neue', cursive;
+  cursor: pointer;
+  line-height: 34px;
+  padding: 10px;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+  -webkit-align-items: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+  -webkit-justify-content: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  margin-top: 40px;
+}
+.item-card__name {
+  text-align: left;
+  white-space: nowrap;
+  font-size: 39px;
+  line-height: 18px;
+}
+.item-card__rate {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  margin: 10px 0;
+}
+.item-card__link {
+  text-decoration: none;
+}
+.item-card__star {
+  margin-right: 5px;
+}
+.item-card__brand {
+  font-size: 19px;
+}
+.item-card__price {
+  margin-right: 15px;
+  line-height: 60px;
+  color: #000;
+  margin: 49px 0;
+  font-size: 53px;
+}
+.item-card__describing {
+  margin-right: 15px;
+  line-height: 35px;
+}
+.reviews {
+  color: #000000;
+  font-family: 'Bebas Neue', cursive;
+}
+.reviews__container {
+  background-color: #ffffff;
+  padding: 50px 0;
+}
+.reviews__header {
+  font-size: 27px;
+  text-transform: uppercase;
+}
+.review {
+  background-image: -webkit-gradient(linear, left top, right top, from(#acacac65), to(#ffffff));
+  background-image: -o-linear-gradient(left, #acacac65, #ffffff);
+  background-image: linear-gradient(to right, #acacac65, #ffffff);
+  margin-bottom: 10px;
+  padding: 10px;
+}
+.review__name {
+  font-size: 20px;
+  margin-bottom: 10px;
+}
+.review__stars {
+  margin-bottom: 10px;
+}
+.review__text {
+  margin-bottom: 10px;
+}
+.review__date {
+  color: #acacac;
+  font-size: 14px;
+}
+.your-review {
+  margin-top: 40px;
+}
+.your-review__header {
+  font-size: 20px;
+  margin-bottom: 10px;
+  color: #000000;
+}
+.your-review__text {
+  width: 100%;
+  max-width: 100%;
+  max-height: 300px;
+  height: 300px;
+  overflow-y: scroll;
+  border: none;
+  background-image: -webkit-gradient(linear, left top, right top, from(#acacac65), to(#ffffff));
+  background-image: -o-linear-gradient(left, #acacac65, #ffffff);
+  background-image: linear-gradient(to right, #acacac65, #ffffff);
+  font-size: 16px;
+  color: #000;
+  font-family: 'Bebas Neue', cursive;
+  padding: 10px;
+}
+.rating-area {
+  overflow: hidden;
+  width: 210px;
+  margin: 30px 0;
+}
+.rating-area:not(:checked) > input {
+  display: none;
+}
+.rating-area:not(:checked) > label {
+  float: right;
+  width: 42px;
+  padding: 0;
+  cursor: pointer;
+  font-size: 32px;
+  line-height: 32px;
+  color: lightgrey;
+  text-shadow: 1px 1px #bbb;
+}
+.rating-area:not(:checked) > label:before {
+  content: '★';
+}
+.rating-area > input:checked ~ label {
+  color: #0a6f65;
+  text-shadow: 1px 1px #00332e;
+}
+.rating-area:not(:checked) > label:hover,
+.rating-area:not(:checked) > label:hover ~ label {
+  color: #0a6f65;
+}
+.rating-area > input:checked + label:hover,
+.rating-area > input:checked + label:hover ~ label,
+.rating-area > input:checked ~ label:hover,
+.rating-area > input:checked ~ label:hover ~ label,
+.rating-area > label:hover ~ input:checked ~ label {
+  color: #0a6f65;
+  text-shadow: 1px 1px #00332e;
+}
+.rate-area > label:active {
+  position: relative;
+}
+.rating-result {
+  width: 265px;
+  margin: 20px 0;
+}
+.rating-result span {
+  padding: 0;
+  font-size: 32px;
+  margin: 0 3px;
+  line-height: 1;
+  color: lightgrey;
+  text-shadow: 1px 1px #bbb;
+}
+.rating-result > span:before {
+  content: '★';
+}
+.rating-result > span.active {
+  color: #0a6f65;
+  text-shadow: 1px 1px #00332e;
+}
+.Sing-in {
+  background-color: #ffffff;
+  padding: 50px 0;
+}
+.Sing-in__form {
+  color: black;
+}
+.Sing-in__item {
+  margin-bottom: 20px;
+}
+.Sing-in__label {
+  display: block;
+  font-size: 20px;
+}
+.Sing-in__label--check {
+  display: inline-block;
+}
+.Sing-in__check {
+  margin-right: 10px;
+}
+.Sing-in__button {
+  display: block;
+  height: 50px;
+  background-color: #0a6f65;
+  border: none;
+  -webkit-border-radius: 3px;
+          border-radius: 3px;
+  color: #fff;
+  text-transform: uppercase;
+  font-size: 30px;
+  line-height: 30px;
+  font-family: 'Bebas Neue', cursive;
+  cursor: pointer;
+  line-height: 34px;
+  padding: 10px;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+  -webkit-align-items: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+  -webkit-justify-content: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  margin-top: 40px;
+}
